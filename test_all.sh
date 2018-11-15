@@ -11,7 +11,7 @@ test_one () {
         --net="$DOCKER_NET" \
         -v "$(pwd "$(dirname "$TEST_SCRIPT")")":/scriptdir:ro \
         -v "$(pwd "$(dirname "$1")")":/nbdir:ro \
-        examineur \
+        crabhi/examineur \
         /scriptdir/"$(basename "$TEST_SCRIPT")" \
         /nbdir/"$(basename "$1")" \
         -- \
