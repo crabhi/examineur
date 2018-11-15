@@ -50,7 +50,7 @@ def main(testfile, notebook, pytest_args):
         subprocess.run(['jupyter-nbconvert', '--to', 'python', nb_name]).check_returncode()
 
         sys.path.insert(0, tmpdir)
-        pytest.main([abs_testfile] + pytest_args)
+        sys.exit(pytest.main([abs_testfile] + pytest_args))
 
 
 if __name__ == "__main__":
